@@ -1,0 +1,51 @@
+/* =====================================================
+
+Style
+
+===================================================== */
+
+/* header
+--------------------------------------------- */
+
+.header {
+	@if $type == all {// set All Devices and SmartPhone
+		background-color: #EEE;
+		width: 100%;
+		margin-bottom: 1em;
+	} @else if $type==tab_s or $type==tab_l or $type==pc {// Media Queries
+		@if $type == tab_s {// set Tablet Small
+			background-color: #CCC;
+			color: #000;
+		} @else if $type == tab_l {// set Tablet Large
+			background-color: #999;
+			color: #CCC;
+		} @else if $type == pc {// set PC
+			background-color: #333;
+			color: #FFF;
+		}// @if
+	}// @if
+}// .header
+
+
+
+/* footer
+--------------------------------------------- */
+
+.footer {
+	@if $type == all {// set All Devices and SmartPhone
+		background-color: #EEE;
+		width: 100%;
+		margin-top: 1em;
+	} @else if $type==tab_s or $type==tab_l or $type==pc {// Media Queries
+		@if $type == tab_s {// set Tablet Small
+			background-color: #CCC;
+			color: #000;
+		} @else if $type == tab_l {// set Tablet Large
+			background-color: #999;
+			color: #CCC;
+		} @else if $type == pc {// set PC
+			background-color: #333;
+			color: #FFF;
+		}// @if
+	}// @if
+}// .footer

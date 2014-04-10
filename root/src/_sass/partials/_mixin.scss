@@ -1,0 +1,63 @@
+// =====================================================
+//
+// MIX-IN
+//
+// ===================================================== */
+
+// Mix-in
+//--------------------------------------------- */
+
+// font-size
+@mixin font_size($size: 24, $base: 16){
+	font-size: $size + px;
+	font-size: ($size / $base) * 1rem;
+}
+
+// ellipsis
+@mixin ellipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+// border-radius
+@mixin radius($size: 5) {
+	@include border-radius($size + px);
+}
+
+// box-sizing
+@mixin box($type: border-box) {
+	@include box-sizing(#{$type});
+}
+
+// hr
+@mixin hr($main: $accent_color, $sub: $sub_color, $margin: 3em) {
+	display: block;
+	border: 0;
+	height: 2px;
+	background: $main;
+	@include background-image(linear-gradient(left, $sub, $main, $sub));
+	margin: $margin 0;
+	padding: 0;
+}
+
+// gradient top to bottom
+@mixin grad($color1: #FFF, $color2: #000) {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#{$color1}', endColorstr = '#{$color2}');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#{$color1}', endColorstr = '#{$color2}')";
+	background-image: -moz-linear-gradient(top, $color1, $color2);
+	background-image: -ms-linear-gradient(top, $color1, $color2);
+	background-image: -o-linear-gradient(top, $color1, $color2);
+	background-image: -webkit-gradient(linear, center top, center bottom, from($color1), to($color2));
+	background-image: -webkit-linear-gradient(top, $color1, $color2);
+	background-image: linear-gradient(top, $color1, $color2);
+}
+
+// transition
+@mixin transition($duration: 1){
+	-webkit-transition: ($duration + s) ease-out;
+	-moz-transition: ($duration + s) ease-out;
+	-ms-transition: ($duration + s) ease-out;
+	-o-transition: ($duration + s) ease-out;
+	transition: ($duration + s) ease-out;
+}

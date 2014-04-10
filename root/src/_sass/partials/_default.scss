@@ -1,0 +1,83 @@
+/* =====================================================
+
+DEFAULT STYLES
+
+===================================================== */
+
+/* Default Styles
+--------------------------------------------- */
+
+// html
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	overflow-y: scroll;
+}
+
+// body
+body {
+	background-color: $main_color;
+	color: $font_color;
+	@include font_size($font_size);
+	line-height: $line_height;
+	font-family: $font_family;
+}
+
+// link
+a {
+	color: $link_color;
+	&:hover:not(.current) {
+		text-decoration: none;
+		@include opacity(.6);
+	}
+	&:visited {}
+	&:active {}
+}
+
+// link
+img {
+	max-width: 100%;
+}
+
+// form
+input[type="text"], input[type="email"],
+input[type="number"], input[type="tel"],
+input[type="password"] textarea {
+	padding: 4px 6px;
+	color: #888;
+	@include font_size(16);
+	border: solid 1px #AAA;
+	@include radius;
+	@include box-shadow(0 0 4px rgba(0, 0, 0, 0.2) inset);
+	@include box;
+	&:focus { 
+		border: solid 1px #EEA34A;
+	}
+}
+
+// 打ち消し線
+.del {
+	text-decoration: line-through !important;
+}
+
+// 水平線
+hr {
+	@include hr;
+}
+
+// youtube レスポンシブ対応
+.youtubeWrapper {
+	position: relative;
+	margin-top: 5em;
+	margin-bottom: 5em;
+	padding-top: 69px;
+	padding-bottom: 50%;
+	overflow: hidden;
+}
+.youtubeWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}

@@ -1,0 +1,137 @@
+@charset "utf-8";
+/*!
+* Compass / Sass Template
+* Copyright (c) yuking11.net All rights reserved
+* @version : 1
+* @author: http://yuking11.net/about/
+*/
+
+// ===========================================
+// Import Compass
+// ===========================================
+@import "compass";
+@import "compass/css3/user-interface";
+
+// ===========================================
+// CSS Normalize
+// ===========================================
+@import "partials/normalize";
+
+/* ===========================================
+ Sprite
+=========================================== */
+$sprites: sprite-map('_sprite/*.png', $spacing:30px);
+$sprites-img: sprite-url($sprites);
+@mixin sprite-background($name) {
+  background-position: sprite-position($sprites, $name);
+  height: image-height(sprite-file($sprites, $name));
+  width: image-width(sprite-file($sprites, $name));
+  margin-top: - image-height(sprite-file($sprites, $name)) / 2;
+}
+.icon_sprite {
+  position: absolute;
+  top: 50%;
+  background: $sprites-img no-repeat;
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+@each $sprite-name in sprite-names($sprites) {
+.#{$sprite-name} {
+  @include sprite-background($sprite-name);
+}
+}
+
+// ===========================================
+// Import Settings
+// ===========================================
+@import "partials/variables";// Vars setting
+@import "partials/mixin";// Mix-in setting
+@import "partials/default";// Default style
+@import "partials/modules";// Module css
+
+// Site Styles
+//---------------------------------------------
+
+// Device definition（all and Mobile, Tablet small, Tablet Large, PC）
+$type: all tab_s tab_l pc;
+
+$tablet_small: "min-width: 32.500em";//#{$tablet_small}
+$tablet_large: "min-width: 47.500em";//#{$tablet_large}
+$desktop:      "min-width: 60.000em";//#{$desktop}
+// $breakpoints: (
+//  tab_s: "min-width: 32.500em",//#{$tab_s}
+//  tab_l: "min-width: 47.500em",//#{$tab_l}
+//  pc: "min-width: 60.000em"//#{$pc}
+// );
+// @each $device, $size in $breakpoints {
+//  @media only screen and ($size) {
+//    $type #{$device};
+//    @import "styles";
+//  }
+// }
+
+/* =====================================================
+
+set All Devices and Smart Phone under 32.500em(520px)
+
+===================================================== */
+$type: all;
+@import "styles";
+
+/* =====================================================
+
+set Tablet Small 32.500em(520px) and more
+
+===================================================== */
+@media only screen and ($tablet_small) {// 32.500em(520px) and more
+  $type: tab_s;
+  @import "styles"
+}
+/* =====================================================
+
+set Tablet Large 47.500em(760px) and more
+
+===================================================== */
+@media only screen and ($tablet_large) {// 47.500em(760px) and more
+  $type: tab_l;
+  @import "styles"
+}
+/* =====================================================
+
+set DESKTOP 60.000em(960px) and more
+
+===================================================== */
+@media only screen and ($desktop) {// 60.000em(960px) and more
+  $type: pc;
+  @import "styles"
+}
+/* =====================================================
+
+set Print
+
+===================================================== */
+@media print {
+  section { display: block; page-break-before: always; }
+  pre code { page-break-after: always; }
+  @page {
+    margin-top: .4cm;
+    margin: .5cm;
+  }
+  p a, code, pre {
+    word-wrap: break-word;
+  }
+  pre a[href]:after {
+    content: "";
+  }
+  pre abbr[title]:after {
+    content: "";
+  }
+  pre.ir a:after,
+  pre a[href^="javascript:"]:after,
+  pre a[href^="#"]:after {
+    content: "";
+  }
+  .no-print { display:none; }
+}

@@ -1,0 +1,64 @@
+/*!
+* Compass / Sass Template
+* Copyright (c) yuking11.net All rights reserved
+* @version : 1
+* @author: http://yuking11.net/about/
+*/
+/* ===========================================
+ Sprite
+=========================================== */
+.icon_sprite {
+  position: absolute;
+  top: 50%;
+  background: url('../images/_sprite-sa8ac2082e9.png') no-repeat;
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.icon_arw_d {
+  background-position: 0 -109px;
+  height: 15px;
+  width: 15px;
+  margin-top: -7.5px;
+}
+
+.icon_arw_r {
+  background-position: 0 -204px;
+  height: 10px;
+  width: 6px;
+  margin-top: -5px;
+}
+
+.icon_bookmark_detail {
+  background-position: 0 -56px;
+  height: 23px;
+  width: 23px;
+  margin-top: -11.5px;
+}
+
+.icon_close {
+  background-position: 0 0;
+  height: 26px;
+  width: 25px;
+  margin-top: -13px;
+}
+
+.icon_confirm {
+  background-position: 0 -154px;
+  height: 20px;
+  width: 28px;
+  margin-top: -10px;
+}
+
+/* ===========================================
+ Styles
+=========================================== */
+h1 {
+  color: #03F;
+}
+
+p {
+  margin-left: 10px;
+}

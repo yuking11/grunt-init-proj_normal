@@ -1,0 +1,52 @@
+// =====================================================
+//
+// VARIABLES
+//
+// =====================================================
+
+// Color
+// ---------------------------------------------
+
+// main color (base color)
+$main_color: #FFF;
+
+// sub color
+$sub_color: #EEE;
+
+// accent color
+$accent_color: #E73562;
+
+// base text color
+$font_color: #333;
+
+// base link color
+$link_color: #03C;
+$link_color_visited: #39F;
+$link_color_hover: #00F;
+$link_color_active: #00F;
+
+
+// Font
+// ---------------------------------------------
+
+// Base font-size
+$font_size: 16;
+
+// Base font-family
+$font_family: {% if (font_sourcecode=='true'){ %}'Source Sans Pro', {% } %}'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+
+
+// Element
+// ---------------------------------------------
+
+// Base line-height
+$line_height: 1.6;
+
+// Image Path
+$img_path: "../img/";
+
+// element margin-bottom
+$base_mb: 1em;
+
+// element padding-bottom
+$base_pb: 1em;
