@@ -29,8 +29,8 @@ grunt-init proj_normal
 また、いくつかオプションがあるので、下記を参考に設定してください。
 
 - Doctype デフォルト HTML5 // or HTML4（html4.01t）
-- Source Code Selfの使用： デフォルト true // or false
-- font-awesomeの使用： デフォルト true // or false
+- Source Sans Pro の使用： デフォルト true // or false
+- font-awesome の使用： デフォルト true // or false
 
 ### Step 2. node_modulesをインストール
 
